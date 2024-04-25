@@ -1,5 +1,6 @@
 import com.fasterxml.jackson.databind.util.LRUMap;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -17,19 +18,17 @@ public class Homework17 extends BaseTest {
         providePassword("Student@test17");
         clickLoginBtn();
         Duration millis;
-        int i = 2000;
-        int i1 = i;
-        Thread.sleep( millis;:i1);
-        searchSong("");
-        Thread.sleep( millis:i1);
+        Thread.sleep( millis:2000)
+        searchSong("Pluto")
+        Thread.sleep( millis:2000)
         clickViewAllBtn();
-        Thread.sleep( millis:i1);
+        Thread.sleep( millis:2000)
         selectFirstSigResult();
-        Thread.sleep( millis:i1);
+        Thread.sleep( millis:2000)
         clickAddToBtn();
-        Thread.sleep( millis:i1);
+        Thread.sleep( millis:2000)
         choosePlaylist();
-        Thread.sleep( millis:i1);
+        Thread.sleep( millis:2000)
         //Assertion
         Assert.assertEquals(getAddToPlayListSuccessMsg(),expectedSongAddedMessage);
 
