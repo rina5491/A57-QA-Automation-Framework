@@ -1,4 +1,5 @@
 import com.fasterxml.jackson.databind.util.LRUMap;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -7,10 +8,9 @@ import java.time.Duration;
 
 public class Homework17 extends BaseTest {
 
-    private LRUMap<Object, Object> searchFiled;
 
     @Test
-    public void addSongToPlaylist () {
+    public void addSongToPlaylist () throws InterruptedException {
 
         String expectedSongAddedMessage = "Added 1 song into \"My New Playlist. \"";
 
@@ -18,17 +18,18 @@ public class Homework17 extends BaseTest {
         providePassword("Student@test17");
         clickLoginBtn();
         Duration millis;
-        Thread.sleep( millis:2000)
-        searchSong("Pluto")
-        Thread.sleep( millis:2000)
+        Thread.sleep( 2000);
+        searchSong("Pluto");
+        Thread.sleep( 2000);
         clickViewAllBtn();
-        Thread.sleep( millis:2000)
+        Thread.sleep( 2000);
         selectFirstSigResult();
-        Thread.sleep( millis:2000)
+        Thread.sleep(2000);
         clickAddToBtn();
-        Thread.sleep( millis:2000)
+        Thread.sleep(2000);
         choosePlaylist();
-        Thread.sleep( millis:2000)
+        Thread.sleep(2000
+        );
         //Assertion
         Assert.assertEquals(getAddToPlayListSuccessMsg(),expectedSongAddedMessage);
 
@@ -66,20 +67,36 @@ public class Homework17 extends BaseTest {
     }
 
     public void searchSong(String songName) {
-        WebElement searchField = driver.findElemnt (By.cssSelector (" dive# searchForm input [Type= 'search']"));
+        WebElement searchField = driver.findElemnt (By.cssSelector ("dive# searchForm input [Type= 'search']"));
         searchFiled.clear ();
         searchField. sendKeys ( songName);
     }
 
-    private void clickLoginBtn() {
+    public void clickLoginBtn() {
+        LogingPage LoginPage;
+        LoginPage = new LoginPage (get driver());
+
+    }
+    public void loginHomePage
+            HomePage HomePage= new HomePage();
+
+    public void providePassword() {
+        ProvidePassword ProvidePassword;
+        ProvidePassword = new ProvidePassword (get driver());
+    }
+    public class HomePage {
+        HomePage Homepage= new HomePage(getdriver());
+
+        public Object getDriver() {
+            return driver;
+        }
+
+        public void setDriver(Object driver) {
+            this.driver = driver;
+        }
     }
 
-    private void providePassword() {
-    }
 
-
-    private void provideEmail() {
-    }
 
 
 }
